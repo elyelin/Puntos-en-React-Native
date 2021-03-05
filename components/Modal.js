@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Dimensions, Modal, View, Text } from "react-native";
 
-export default (children, visibility) => {
+export default ({ children, visibility }) => {
   return (
     <Modal animationType="slide" transparent={true} visible={visibility}>
       <View style={styles.center}>
@@ -16,11 +16,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalView: {
+    minWidth: Dimensions.get("window").width - 180,
     backgroundColor: "#fff",
     borderRadius: 5,
-    padding: 20,
+    padding: 0,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
